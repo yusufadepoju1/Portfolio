@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Yusuf Adepoju — Data Science / ML &amp; AI Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg1:#fbf3ea; --bg2:#eef1fb; --card:#ffffff; --ink:#1c1710; --mute:#6b7280; --line:#ece5da;
+  --pink:#ff4f81; --gold:#ffab1f; --teal:#0dbfad; --indigo:#5b4bf0; --coral:#ff7a45; --sky:#2aa9ff;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg1:#12111a;--bg2:#181523;--card:#1e1b29;--ink:#f3f1f8;--mute:#a29cb3;--line:#2c283a;}
+}
+:root[data-theme="dark"]{--bg1:#12111a;--bg2:#181523;--card:#1e1b29;--ink:#f3f1f8;--mute:#a29cb3;--line:#2c283a;}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);font-family:'Space Grotesk',system-ui,sans-serif;background:linear-gradient(160deg,var(--bg1),var(--bg2)) fixed}
+.mono{font-family:'IBM Plex Mono',ui-monospace,monospace}
+
+.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb, var(--bg1) 85%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.topbar-in{max-width:760px;margin:0 auto;padding:14px 20px;display:flex;justify-content:space-between;align-items:center}
+.brand{font-weight:800;font-size:16px}
+.brand .dot{color:var(--pink)}
+nav.tabs{display:flex;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px}
+nav.tabs a{font-size:13px;font-weight:700;color:var(--mute);text-decoration:none;padding:7px 16px;border-radius:999px}
+nav.tabs a[aria-current=page]{background:var(--indigo);color:#fff}
+#themeBtn{background:var(--indigo);color:#fff;border:none;border-radius:999px;width:32px;height:32px;cursor:pointer}
+
+main{max-width:760px;margin:0 auto;padding:30px 20px 60px}
+.view[hidden]{display:none}
+.dcard{background:var(--card);border-radius:26px;box-shadow:0 24px 50px -22px rgba(30,20,60,.22);padding:36px 32px}
+.eyebrow{text-align:center;color:var(--indigo);font-weight:700;font-size:13px;margin:0 0 10px}
+.dcard-title{font-size:clamp(24px,4vw,34px);font-weight:800;text-align:center;letter-spacing:-.02em;margin:0 0 8px}
+.dcard-sub{text-align:center;color:var(--mute);font-size:15px;margin:0 auto 26px;max-width:48ch}
+
+.blocks{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:28px}
+@media(max-width:600px){.blocks{grid-template-columns:repeat(2,1fr)}}
+.blk{border-radius:16px;padding:16px 14px;color:#fff;box-shadow:0 14px 26px -14px rgba(0,0,0,.35);min-height:88px;display:flex;flex-direction:column;justify-content:flex-end}
+.blk h4{margin:0 0 2px;font-size:13.5px;font-weight:700}
+.blk p{margin:0;font-size:11.5px;opacity:.92;line-height:1.3}
+.blk.c1{background:linear-gradient(135deg,var(--pink),var(--coral))}
+.blk.c2{background:linear-gradient(135deg,var(--gold),#ffcf5c)}
+.blk.c3{background:linear-gradient(135deg,var(--teal),#38e0cd)}
+.blk.c4{background:linear-gradient(135deg,var(--indigo),var(--sky))}
+
+.actionbox{border:1px solid var(--line);border-radius:18px;padding:20px 22px;margin-bottom:16px;border-left-width:5px}
+.actionbox.tint-a{background:color-mix(in srgb, var(--coral) 9%, var(--card));border-left-color:var(--coral)}
+.actionbox.tint-b{background:color-mix(in srgb, var(--teal) 9%, var(--card));border-left-color:var(--teal)}
+.actionbox.tint-c{background:color-mix(in srgb, var(--indigo) 9%, var(--card));border-left-color:var(--indigo)}
+.actionbox h3{margin:0 0 4px;font-size:15px;font-weight:700}
+.actionbox .hint{color:var(--mute);font-size:12.5px;margin:0 0 12px}
+.bio{color:var(--mute);font-size:14.5px;line-height:1.6;margin:0}
+
+.skillcat{margin-bottom:14px}
+.skillcat .k{font-size:12.5px;color:var(--mute);font-weight:600;display:block;margin-bottom:7px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chips span{font-size:12px;border:1.5px solid var(--line);background:var(--card);border-radius:8px;padding:5px 10px;font-weight:600;box-shadow:0 2px 6px -3px rgba(0,0,0,.15)}
+
+.btn{font-size:14px;padding:11px 18px;border-radius:12px;text-decoration:none;font-weight:700;border:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.btn.primary{background:var(--indigo);color:#fff;box-shadow:0 10px 20px -10px rgba(91,75,240,.6)}
+.btn.full{width:100%}
+
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.filters button{background:var(--card);border:1.5px solid var(--line);border-radius:999px;padding:6px 14px;font-size:12.5px;color:var(--mute);cursor:pointer;font-weight:700}
+.filters button[aria-pressed=true]{background:var(--ink);color:var(--card);border-color:var(--ink)}
+
+.grid{display:grid;gap:16px}
+.pcard{border-radius:20px;padding:22px;color:#fff;box-shadow:0 20px 38px -18px rgba(0,0,0,.35)}
+.pcard .num{font-size:11.5px;opacity:.85;font-weight:700}
+.pcard h4{margin:6px 0 12px;font-size:18px}
+.pcard .k{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;opacity:.85;display:block;margin:10px 0 3px}
+.pcard .k:first-of-type{margin-top:0}
+.pcard p{margin:0;font-size:13.5px;line-height:1.55;opacity:.96}
+.pcard .result{font-weight:700}
+.pcard .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.pcard .tags span{font-size:11px;border:1px solid rgba(255,255,255,.45);border-radius:6px;padding:2px 8px;opacity:.95}
+.pcard .links{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.pcard .links a{font-size:12.5px;background:rgba(255,255,255,.18);border:1.5px solid rgba(255,255,255,.6);color:#fff;text-decoration:none;font-weight:700;padding:7px 14px;border-radius:999px}
+.pcard .links a:hover{background:rgba(255,255,255,.32)}
+
+.xrow{padding:12px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:10px}
+.xrow:last-child{border-bottom:none}
+.xrow{flex-direction:column}
+.xrow .top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;width:100%}
+.xrow h4{margin:0;font-size:15px;font-weight:700}
+.xrow .org{color:var(--indigo);font-size:13px;font-weight:600;margin:2px 0 6px}
+.xrow .dates{color:var(--mute);font-size:12.5px;white-space:nowrap;font-weight:700}
+.xrow .desc{color:var(--mute);font-size:13px;margin:0 0 6px}
+.xrow .bullets{margin:0;padding-left:18px;color:var(--mute);font-size:13px;line-height:1.6}
+.xrow .bullets li{margin-bottom:2px}
+
+.crow{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.crow:last-child{border-bottom:none}
+.crow .k2{font-size:12.5px;color:var(--mute);font-weight:600}
+.crow a{color:var(--indigo);text-decoration:none;font-weight:700;font-size:14.5px}
+
+footer{text-align:center;padding:20px 0 40px;color:var(--mute);font-size:12.5px}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <div class="brand">Yusuf Adepoju<span class="dot">.</span></div>
+    <nav class="tabs" id="tabs">
+      <a href="#profile" data-v="profile">Profile</a>
+      <a href="#projects" data-v="projects">Projects</a>
+      <a href="#contact" data-v="contact">Contact</a>
+    </nav>
+    <button id="themeBtn" title="Toggle theme">◐</button>
+  </div>
+</header>
+
+<main>
+  <section id="v-profile" class="view">
+    <div class="dcard">
+      <p class="eyebrow mono">AI/ML Engineer</p>
+      <h1 class="dcard-title">ADEPOJU Yusuf Abiodun</h1>
+      <p class="dcard-sub">AI/ML Engineer building practical machine learning, generative AI, and data-driven solutions from experimentation to deployment.</p>
+      <div class="blocks">
+        <div class="blk c1"><h4>Data</h4><p>Cleaning, features, pipelines</p></div>
+        <div class="blk c2"><h4>Modeling</h4><p>Classical ML to deep learning</p></div>
+        <div class="blk c3"><h4>Deployment</h4><p>APIs, Docker, monitoring</p></div>
+        <div class="blk c4"><h4>Product</h4><p>Idea to shipped tool</p></div>
+      </div>
+      <div class="actionbox tint-a">
+        <h3>Career summary</h3>
+        <p class="bio">I am a Data Science and AI/ML professional with over five years of combined experience in machine learning, AI engineering, data analysis, and technical training. I build practical AI solutions using Python, machine learning, large language models, RAG, APIs, and modern AI development frameworks.</p>
+        <p class="bio" style="margin-top:10px">My experience spans developing predictive models, building LLM-powered applications, creating data and ML pipelines, deploying APIs, and working with model evaluation and monitoring. I also have experience teaching data science, machine learning, and programming, helping learners move from concepts to hands-on implementation.</p>
+        <p class="bio" style="margin-top:10px">I am particularly interested in building AI systems that solve real-world problems and taking models beyond experimentation into usable, deployable applications.</p>
+      </div>
+      <div class="actionbox tint-b">
+        <h3>Skills</h3>
+        <div id="skillcats"></div>
+      </div>
+      <div class="actionbox tint-c">
+        <h3>Experience</h3>
+        <div id="expList"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="v-projects" class="view" hidden>
+    <div class="dcard">
+      <h1 class="dcard-title">Projects</h1>
+      <p class="dcard-sub">Filter by type. Each card links to its GitHub repo and live demo where available.</p>
+      <div class="filters mono" id="filters"></div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <section id="v-contact" class="view" hidden>
+    <div class="dcard">
+      <h1 class="dcard-title">Get in touch</h1>
+      <p class="dcard-sub">Reach out by email or phone — whichever's easier.</p>
+      <div class="actionbox">
+        <div class="crow"><span class="k2">Email</span><a id="emailLink" href="mailto:you@example.com">you@example.com</a></div>
+        <div class="crow"><span class="k2">Phone</span><a id="phoneLink" href="tel:+10000000000">+1 000 000 0000</a></div>
+      </div>
+      <a class="btn primary full" id="emailBtn" href="mailto:you@example.com">Send an email</a>
+    </div>
+  </section>
+</main>
+
+<footer>© <span id="yr"></span> ADEPOJU Yusuf Abiodun. All rights reserved.</footer>
+
+<script>
+const $ = id => document.getElementById(id);
+
+/* ---------- routing between the three "pages" ---------- */
+const VIEWS = ["profile","projects","contact"];
+function route(){
+  const v = VIEWS.includes(location.hash.slice(1)) ? location.hash.slice(1) : "profile";
+  VIEWS.forEach(name => { $('v-'+name).hidden = name !== v; });
+  document.querySelectorAll('#tabs a').forEach(a => a.setAttribute('aria-current', a.dataset.v === v ? 'page' : 'false'));
+}
+window.addEventListener('hashchange', route);
+route();
+
+/* ---------- theme ---------- */
+$('themeBtn').onclick = () => {
+  const root = document.documentElement, cur = root.getAttribute('data-theme');
+  root.setAttribute('data-theme', cur === 'dark' ? 'light' : 'dark');
+};
+
+/* =====================================================================
+   EDIT YOUR CONTENT BELOW. To add a project, skill or experience entry,
+   copy an existing object in the array (the { ... } block) and change
+   its values. No admin UI — this file is the single source of truth.
+   ===================================================================== */
+
+/* ---------- skills ---------- */
+const SKILLS = {
+  "Focus Areas": ["LLM Applications","RAG Systems","APIs & Deployment","Machine Learning","Data Science","AI Agents"],
+  "Tech Stack": ["Python","SQL","FastAPI","Flask","LangChain","LangGraph","scikit-learn","XGBoost","Pandas","NumPy","Power BI","Git"]
+};
+function renderSkills(){
+  const wrap = $('skillcats'); wrap.innerHTML = "";
+  Object.keys(SKILLS).forEach(cat => {
+    const row = document.createElement('div'); row.className = 'skillcat';
+    row.innerHTML = `<span class="k mono">${cat}</span><div class="chips">${SKILLS[cat].map(s=>`<span>${s}</span>`).join('')}</div>`;
+    wrap.appendChild(row);
+  });
+}
+renderSkills();
+
+/* ---------- experience ---------- */
+const EXPERIENCE = [
+  {
+    role:"AI Engineer", org:"Smartinsight", location:"Remote",
+    start:"Jul 2023", end:"Present",
+    desc:"Develop and deploy machine learning and AI solutions for real-world business applications, working remotely with the Smartinsight team.",
+    bullets:[
+      "Build predictive analytics and classification solutions using Python and machine learning techniques.",
+      "Develop and integrate AI services and REST APIs for production applications.",
+      "Improve model performance through experimentation, evaluation, and iterative retraining.",
+      "Design and optimize data and ML pipelines, contributing to a 30% reduction in deployment time.",
+      "Improve application performance and reduce inference latency by approximately 20% through optimization.",
+      "Monitor deployed models and applications to identify performance issues and support continuous improvement."
+    ]
+  },
+  {
+    role:"Data Science Instructor & Technical Trainer", org:"Brattle Multi Concepts Consults", location:"",
+    start:"Jan 2021", end:"Jul 2023",
+    desc:"Delivered practical training in data science, machine learning, Python programming, and related technical subjects, with a strong focus on hands-on learning.",
+    bullets:[
+      "Taught data analysis, Python, machine learning, and practical data science workflows.",
+      "Designed and delivered hands-on laboratory sessions and project-based exercises.",
+      "Mentored 50+ learners through technical projects and practical assessments.",
+      "Guided learners in applying Python, SQL, machine learning, and data analysis techniques to real-world problems.",
+      "Contributed to improved learner assessment performance through practical, project-focused instruction."
+    ]
+  }
+];
+function renderExperience(){
+  const wrap = $('expList'); wrap.innerHTML = "";
+  EXPERIENCE.forEach(x => {
+    const row = document.createElement('div'); row.className = 'xrow';
+    row.innerHTML = `<div class="top"><h4>${x.role}</h4><div class="dates">${x.start} — ${x.end||'Present'}</div></div>
+      <div class="org">${x.org}${x.location ? ' · '+x.location : ''}</div>
+      ${x.desc ? `<p class="desc">${x.desc}</p>` : ''}
+      ${x.bullets && x.bullets.length ? `<ul class="bullets">${x.bullets.map(b=>`<li>${b}</li>`).join('')}</ul>` : ''}`;
+    wrap.appendChild(row);
+  });
+}
+renderExperience();
+
+/* ---------- projects ---------- */
+// Each card cycles through this palette automatically, in order.
+const CARD_COLORS = ["var(--pink)","var(--gold)","var(--teal)","var(--indigo)","var(--coral)","var(--sky)"];
+
+const PROJECTS = [
+  {
+    title:"Livestock Disease Predictor",
+    type:"ml",
+    problem:"Farmers need a fast way to narrow down likely livestock diseases from observable symptoms, animal type, age and temperature.",
+    approach:"Modularized a notebook into an ML pipeline (feature encoding, preprocessing, model comparison) and wrapped the best-performing model in a FastAPI service with a click-to-select UI.",
+    stack:["Python","Pandas","scikit-learn","XGBoost","FastAPI"],
+    result:"",
+    github:"https://lnkd.in/e79JhK5E",
+    demo:"https://lnkd.in/e6bbdxQZ"
+  }
+  // ,{
+  //   title:"Next Project",
+  //   type:"rag",
+  //   problem:"...",
+  //   approach:"...",
+  //   stack:["Python","LangChain"],
+  //   result:"",
+  //   github:"https://github.com/you/repo",
+  //   demo:"https://your-demo-url.com"
+  // }
+];
+
+const grid = $('grid'), filters = $('filters');
+function renderFilters(active){
+  const types = ["all", ...new Set(PROJECTS.map(p=>p.type))];
+  filters.innerHTML = "";
+  types.forEach(t => {
+    const b = document.createElement('button'); b.textContent = t;
+    b.setAttribute('aria-pressed', t===active);
+    b.onclick = () => { renderFilters(t); renderGrid(t); };
+    filters.appendChild(b);
+  });
+}
+function renderGrid(filter){
+  const items = filter==="all" ? PROJECTS : PROJECTS.filter(p=>p.type===filter);
+  grid.innerHTML = "";
+  items.forEach((p,i) => {
+    const c = document.createElement('div'); c.className = 'pcard';
+    c.style.background = CARD_COLORS[i % CARD_COLORS.length];
+    const links = [];
+    if(p.github) links.push(`<a href="${p.github}" target="_blank" rel="noopener">GitHub ↗</a>`);
+    if(p.demo) links.push(`<a href="${p.demo}" target="_blank" rel="noopener">Live demo ↗</a>`);
+    c.innerHTML = `<span class="num mono">${String(i+1).padStart(2,'0')}</span>
+      <h4>${p.title}</h4>
+      <span class="k">Problem</span><p>${p.problem||''}</p>
+      <span class="k">Approach</span><p>${p.approach||''}</p>
+      <span class="k">Stack</span><div class="tags mono">${(p.stack||[]).map(t=>`<span>${t}</span>`).join('')}</div>
+      ${p.result ? `<span class="k">Result</span><p class="result">${p.result}</p>` : ''}
+      ${links.length ? `<div class="links">${links.join('')}</div>` : `<p style="opacity:.75;font-size:12px;margin-top:14px">Add a github/demo link in the data to show buttons here.</p>`}`;
+    grid.appendChild(c);
+  });
+  if(items.length === 0){
+    grid.innerHTML = `<div style="text-align:center;color:var(--mute);padding:20px">No projects in this category yet.</div>`;
+  }
+}
+renderFilters("all"); renderGrid("all");
+
+/* ---------- contact ---------- */
+// "tel" is the +country-code number used for the clickable link; "phone" is what's shown on screen.
+const CONTACT = { email:"yusufadepoju22@gmail.com", phone:"0813 703 3485", tel:"+2348137033485" };
+$('emailLink').textContent = CONTACT.email; $('emailLink').href = 'mailto:'+CONTACT.email;
+$('emailBtn').href = 'mailto:'+CONTACT.email;
+$('phoneLink').textContent = CONTACT.phone; $('phoneLink').href = 'tel:'+CONTACT.tel;
+
+$('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
