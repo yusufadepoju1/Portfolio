@@ -303,6 +303,16 @@ const PROJECTS = [
   result: "Built a web-based attendance system that automates user recognition and attendance tracking with a monitoring dashboard.",
   github: "https://github.com/yusufadepoju1/Face_recognition",
   demo: ""
+},
+{
+  title:"AI Business Automation Platform",
+  type:"rag",
+  problem:"Small businesses lose customers and leads when enquiries go unanswered outside working hours, and staff spend their time repeating the same answers about prices and policies.",
+  approach:"Built a multi-tenant SaaS where each business uploads its own PDF, DOCX and TXT documents, which are chunked, embedded and stored in a per-business FAISS index. A LangGraph workflow classifies each message, retrieves from the business's documents, and routes it to a support or sales agent running on Groq. The sales agent captures contact details, qualifies leads and writes them to a built-in CRM, and unanswered questions are handed to a human. Also includes a web chat widget, a WhatsApp Cloud API handler, signed webhooks with n8n workflows, and a Chart.js analytics dashboard, backed by FastAPI, PostgreSQL and Alembic with JWT auth and strict per-business data isolation.",
+  stack:["Python","FastAPI","LangChain","LangGraph","Groq","FAISS","PostgreSQL","SQLAlchemy","Alembic","n8n","Chart.js","Pytest","Render"],
+  result:"31 automated tests passing on both SQLite and PostgreSQL 16, covering authentication, tenant isolation, role-based access, document processing, agent routing, CRM, webhooks and analytics.",
+  github:"https://github.com/yusufadepoju1/ai-business-platform",
+  demo:"https://ai-business-platform-5pul.onrender.com"
 }
   // ,{
   //   title:"Next Project",
